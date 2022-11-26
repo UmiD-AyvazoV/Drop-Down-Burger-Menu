@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: url("https://m.economictimes.com/thumb/msid-90112046,width-1200,height-900,resizemode-4,imgsize-967146/inox-winds-green-energy-arm-to-raise-rs-500-crore-via-ipo.jpg")
+    no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.nav {
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  background: rgba(20, 59, 24, 0.4);
+}
+
+.nav ul {
+  min-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  transition: 1.5s ease;
+}
+
+.nav ul li {
+  list-style: none;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul li:hover {
+  background: rgb(4, 61, 4);
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav .projects {
+  position: relative;
+}
+
+.nav .projects ul {
+  position: absolute;
+  top: 4.7vh;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background: green;
+  display: none;
+}
+
+.nav .projects:hover ul {
+  display: block;
+}
+
+.nav .projects ul li {
+  border-bottom: 1px solid #fff;
+}
+
+.nav .projects ul li ul {
+  top: 50;
+  left: 251px;
+  display: none;
+}
+
+.nav .projects ul li ul li {
+  display: none;
+}
+
+.nav .projects .greenEnergy:hover ul li {
+  display: block;
+}
+
+.nav i {
+  margin-right: 10px;
+  color: #fff;
+  transition: 1s ease;
+  margin-left: 5px;
+}
+
+.nav .projects .greenEnergy:hover i {
+  transform: translateX(55px);
+  font-size: 33px;
+  color: lime;
+}
+
+.hamburger {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  padding: 0.2rem;
+  cursor: pointer;
+  overflow: hidden;
+  display: none;
+}
+
+.hamburger div {
+  pointer-events: none;
+  height: 5px;
+  width: 50px;
+  background: #fff;
+  margin-top: 5px;
+  transition: 1s ease;
+}
+
+.slide {
+  transform: translateX(100%);
+}
+
+@media screen and (max-width: 878px) {
+  .nav ul {
+    position: absolute;
+    flex-direction: column;
+    top: 5vh;
+    width: 100vw;
+    height: 95vh;
+    left: -100%;
+    font-size: 1.6rem;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .nav .projects:hover ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline;
+  }
+
+  .line1.toggle {
+    transform: translateY(10px) rotateZ(45deg);
+  }
+
+  .line2.toggle {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  .line3.toggle {
+    transform: translateY(-10px) rotateZ(-45deg);
+  }
+}
